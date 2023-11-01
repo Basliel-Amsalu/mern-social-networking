@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://basliel:basliel@cluster0.unuyiud.mongodb.net/mern-social-networking"
+  "mongoURI": "mongodb://0.0.0.0:27017/mern-social-networking",
+  "jwtSecret": "enterthedragon"
 }

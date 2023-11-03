@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb://0.0.0.0:27017/mern-social-networking",
-  "jwtSecret": "enterthedragon"
+  "jwtSecret": "enterthedragon",
+  "githubClientID": "b333ceaba04b9545fdc6",
+  "githubClientSecret": "5a4325360c2e3ca17ee785e36dc0402d590be860"
 }

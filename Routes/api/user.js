@@ -62,7 +62,6 @@ router.post(
           if (err) throw err;
           res.status(201).json({
             message: "Success",
-            user: newUser, // Include the user object
             token,
           });
         }

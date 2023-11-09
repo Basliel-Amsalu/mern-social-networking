@@ -19,6 +19,7 @@ export const getCurrentProfile = () => async (dispatch) => {
     });
   } catch (err) {
     dispatch(setAlert(err.response.statusText, "danger"));
+    dispatch({ type: CLEAR_PROFILE });
 
     dispatch({
       type: PROFILE_ERROR,

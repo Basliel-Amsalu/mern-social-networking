@@ -173,6 +173,7 @@ router.put("/unlike/:id", auth, async (req, res) => {
 
     res.status(200).json({
       message: "like removed",
+      post,
     });
   } catch (err) {
     res.status(500).send("server error");
@@ -191,7 +192,7 @@ router.post(
     try {
       const user = await User.findById(req.user.id).select("-password");
       const post = await Post.findById(req.params.id);
-      console.log(user);
+
       let newComment = {
         user: req.user.id,
         text: req.body.text,
@@ -206,6 +207,7 @@ router.post(
       }
 
       post.comments.unshift(newComment);
+
       await post.save();
 
       res.status(200).json({

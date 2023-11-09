@@ -6,7 +6,7 @@ import { logout } from "../../actions/auth";
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   console.log(isAuthenticated);
-  const authLinks = (
+  const guestLinks = (
     <ul>
       <li>
         <Link to='/profiles'>Developers</Link>
@@ -19,10 +19,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
     </ul>
   );
-  const guestLinks = (
+  const authLinks = (
     <ul>
       <li>
         <Link to='/profiles'>Developers</Link>
+      </li>
+      <li>
+        <Link to='/posts'>Posts</Link>
       </li>
       <li>
         <Link to='/dashboard'>
@@ -46,7 +49,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </h1>
       {!loading && (
-        <Fragment>{!isAuthenticated ? authLinks : guestLinks}</Fragment>
+        <Fragment>{!isAuthenticated ? guestLinks : authLinks}</Fragment>
       )}
     </nav>
   );
